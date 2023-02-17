@@ -14,6 +14,11 @@
 #include "spanish.dtsi"
 
 
+#define EAIG &uc 00E9 00C9 // é É
+#define NTIL &uc 00F1 00D1 // ñ Ñ
+#define PI &uc 03C0 // π
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -61,8 +66,8 @@
             bindings = <
  &bt BT_SEL 0      &kp EXCL      &kp AT    &kp HASH      &kp DLLR  &kp PRCNT          &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR    &kp DEL
  &bt BT_SEL 1    &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &bt BT_SEL 0      &to 3          &kp UNDER  &kp EQUAL         &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
- &bt BT_SEL 2  &out OUT_TOG      &trans      &trans        &trans     &n_tilde          &kp MINUS   &kp PLUS         &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
-                                     &kp LGUI  &kp LEFT_ALT  &kp SPACE            &kp RET     &trans         &kp RALT
+ &bt BT_SEL 2  &out OUT_TOG      &trans      &trans        &trans     &NTIL        &kp MINUS   &kp PLUS         &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
+                                             &kp LGUI  &kp LEFT_ALT  &kp SPACE        &kp RET     &trans         &kp RALT
             >;
         };
     };
