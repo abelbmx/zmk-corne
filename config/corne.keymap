@@ -10,9 +10,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define HOST_OS 2  // set to 2 for macOS/Windows-Alt-Codes, default is 0 (Windows)
-#include helper.h
+#include "helper.h"
+#include "spanish.dtsi"
 
-ZMK_UNICODE_PAIR(n_tilde,   N0, N0, F, N1,   N0, N0, D, N1)
 
 / {
     keymap {
