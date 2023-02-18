@@ -28,6 +28,17 @@
                 , <&macro_release &kp LALT>
                 ;
         };
+
+        screen_cap: screen_cap {
+            label = "Screen_Cap";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp LSHFT &kp S>
+                , <&macro_release &kp LGUI>
+                ;
+        };
     };
 
     keymap {
@@ -36,8 +47,8 @@
         Base {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             label = "Base";
@@ -51,16 +62,16 @@
 
         Lower {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  PP  |  up  |   3   |  4  |  5  |   |  7  |  8  |  9  |  0  |HOME |  s  |
-            // | BTCLR| left | down | right | BT4 | BT5 |   |  4  |  5  |  6  | END | NL  | F10 |
-            // | SHFT |      |      |       |     |     |   |  1  |  2  |  3  |     |  `  | RSH |
-            //                      | GUI   |     | SPC |   | ENT |     | ALT |
+            // |  TAB  |  PP  |  up  |   F2  |  F4  |  F5  |   |  7  |  8  |  9  |  0  |HOME | SCP |
+            // | LSHFT | left | down | right |  F6  | F8   |   |  4  |  5  |  6  | END | NL  | F10 |
+            // | LALT  |      |      |       |  F9  |  +   |   |  1  |  2  |  3  |  .  |  NL  | RSH |
+            //                       | GUI   |      | SPC  |   | ENT |     | ALT |
 
             label = "Lower";
             bindings = <
-     &kp TAB  &kp K_PP    &kp UP     &kp F2     &kp F4     &kp F5           &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp S
-   &kp LSHFT  &kp LEFT  &kp DOWN  &kp RIGHT     &kp F6     &kp F8           &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &kp KP_NUMLOCK  &kp F10
-    &kp LALT    &trans    &trans     &trans  &kp MINUS   &kp PLUS           &kp KP_NUMBER_1   &kp KP_NUMBER_2   &kp KP_NUMBER_3    &kp DOT       &kp GRAVE       &kp RSHIFT
+     &kp TAB  &kp K_PP    &kp UP     &kp F2     &kp F4     &kp F5           &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
+   &kp LSHFT  &kp LEFT  &kp DOWN  &kp RIGHT     &kp F6     &kp F8           &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &kp F10
+    &kp LALT    &trans    &trans     &trans     &kp F9   &kp PLUS           &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
                                    &kp LGUI     &trans  &kp SPACE           &kp RET  &trans   &kp RALT
             >;
         };
@@ -69,14 +80,14 @@
             // -----------------------------------------------------------------------------------------
             // |  BT0  |  !  |  "  |  £  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // |  BT1  |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  #  |  F11 |
-            // |  BT2  |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "~" |  ¬   |
+            // |  BT2  |     |     |     |     |  `  |   |  _  |  +  |  {  |  }  | "~" |  ¬   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             label = "Raise";
             bindings = <
  &bt BT_SEL 0      &kp EXCL      &kp AT    &kp HASH      &kp DLLR    &kp PRCNT        &kp CARET   &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
  &bt BT_SEL 1    &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &bt BT_SEL 0        &to 3        &kp UNDER   &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
- &bt BT_SEL 2  &out OUT_TOG      &trans      &trans        &trans  &zed_em_kay        &kp MINUS   &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
+ &bt BT_SEL 2  &out OUT_TOG      &trans      &trans        &trans    &kp GRAVE        &kp MINUS   &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
                                              &kp LGUI  &kp LEFT_ALT  &kp SPACE        &kp RET     &trans      &kp RALT
             >;
         };
