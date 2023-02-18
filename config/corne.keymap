@@ -16,7 +16,6 @@
 #include "helper.h"
 #include "spanish.dtsi"
 
-
 / {
     macros {
         zed_em_kay: zed_em_kay {
