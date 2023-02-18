@@ -17,10 +17,18 @@
 #include "spanish.dtsi"
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_enter {
+            timeout-ms = <MODTIME>;
+            key-positions = <0 1>;
+            bindings = <&kp ENTER>;
+        };
+    };
 
     macros {
-        zed_em_kay: zed_em_kay {
-            label = "ZM_zed_em_kay";
+        macro_name: macro_name {
+            label = "my_macro";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
