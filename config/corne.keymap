@@ -70,7 +70,7 @@
             bindings = <
      &kp TAB  &kp K_PP    &kp UP     &kp F2     &kp F4     &kp F5           &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
    &kp LSHFT  &kp LEFT  &kp DOWN  &kp RIGHT     &kp F6     &kp F8           &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &kp F10
-    &kp LALT    &trans    &trans     &trans     &kp F9   &kp PLUS           &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
+    &kp LALT    &bt BT_CLR    &bt BT_PRV     &bt BT_SEL 0     &kp F9   &kp PLUS           &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
                                    &kp LGUI     &trans  &kp SPACE           &kp RET  &trans   &kp RALT
             >;
         };
@@ -95,4 +95,5 @@
 
 &nice_view_spi {
     cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
-};
+};   
+
