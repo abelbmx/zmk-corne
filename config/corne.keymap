@@ -18,6 +18,21 @@
 
 
 / {
+    macros {
+        zed_em_kay: zed_em_kay {
+            label = "ZM_zed_em_kay";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_NUMBER_1 &kp &kp KP_NUMBER_6 &kp KP_NUMBER_4>
+                , <&macro_release &kp LALT>
+                ;
+        };
+    };
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -64,7 +79,7 @@
             bindings = <
  &bt BT_SEL 0      &kp EXCL      &kp AT    &kp HASH      &kp DLLR    &kp PRCNT        &kp CARET   &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
  &bt BT_SEL 1    &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &bt BT_SEL 0        &to 3        &kp UNDER   &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
- &bt BT_SEL 2  &out OUT_TOG      &trans      &trans        &trans     &n_tilde        &kp MINUS   &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
+ &bt BT_SEL 2  &out OUT_TOG      &trans      &trans        &trans  &zed_em_kay        &kp MINUS   &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
                                              &kp LGUI  &kp LEFT_ALT  &kp SPACE        &kp RET     &trans      &kp RALT
             >;
         };
