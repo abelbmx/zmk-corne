@@ -20,7 +20,7 @@
     combos {
         compatible = "zmk,combos";
         combo_enter {
-            timeout-ms = <MODTIME>;
+            timeout-ms = <0>;
             key-positions = <0 1>;
             bindings = <&kp ENTER>;
         };
