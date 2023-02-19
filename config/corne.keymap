@@ -16,6 +16,14 @@
 #include "helper.h"
 #include "spanish.dtsi"
 
+
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/led/led.h>
+
+#include <../boards/shields/corne/boards/nice_nano.overlay>
+
+&led_strip { chain-length = <27>; };
+
 / {
     macros {
         zed_em_kay: zed_em_kay {
@@ -62,11 +70,11 @@
 
             label = "Base";
             bindings = <
-   &kp TAB   &kp Q   &kp W      &kp E   &kp R      &kp T            &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSPC
- &kp LSHFT   &kp A   &kp S      &kp D   &kp F      &kp G            &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
- &kp LCTRL   &kp Z   &kp X      &kp C   &kp V      &kp B            &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                             &kp LALT   &mo 1  &kp SPACE            &kp RET  &mo 2   &kp RALT
-            >;
+            &kp TAB     &kp Q   &kp W      &kp E   &kp R      &kp T            &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSPC
+            &kp LSHFT   &kp A   &kp S      &kp D   &kp F      &kp G            &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+            &kp LCTRL   &kp Z   &kp X      &kp C   &kp V      &kp B            &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                                        &kp LALT   &mo 1  &kp SPACE            &kp RET  &mo 2   &kp RALT
+                        >;
         };
 
         Lower {
@@ -78,10 +86,10 @@
 
             label = "Lower";
             bindings = <
-     &kp TAB  &kp K_PP    &kp UP     &kp F2     &kp F4     &kp F5           &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
-   &kp LSHFT  &kp LEFT  &kp DOWN  &kp RIGHT     &kp F6     &kp F8           &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &kp F10
-    &kp LALT    &trans    &trans     &trans     &kp F9   &kp PLUS           &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
-                                   &kp LGUI     &trans  &kp SPACE           &kp RET  &trans   &kp RALT
+            &kp TAB  &kp K_PP    &kp UP     &kp F2     &kp F4     &kp F5           &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
+        &kp LSHFT    &kp LEFT  &kp DOWN  &kp RIGHT     &kp F6     &kp F8           &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &kp F10
+           &kp LALT    &trans    &trans     &trans     &kp F9   &kp PLUS           &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
+                                          &kp LGUI     &trans  &kp SPACE           &kp RET  &mo 3    &kp RALT
             >;
         };
 
@@ -94,10 +102,29 @@
 
             label = "Raise";
             bindings = <
- &bt BT_SEL 0      &kp EXCL      &kp AT    &kp HASH      &kp DLLR         &kp PRCNT        &kp CARET   &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
- &bt BT_SEL 1    &bt BT_CLR  &bt BT_PRV  &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER   &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
- &bt BT_SEL 2  &out OUT_TOG      &trans      &trans      &task_manager    &kp GRAVE        &kp MINUS   &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
-                                             &kp LCTRL   &kp LEFT_ALT     &kp SPACE        &kp RET     &trans      &kp RALT
+            &bt BT_SEL 0      &kp EXCL      &kp AT    &kp HASH      &kp DLLR         &kp PRCNT        &kp CARET   &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
+            &bt BT_SEL 1    &bt BT_CLR  &bt BT_PRV  &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER   &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
+            &bt BT_SEL 2  &out OUT_TOG      &trans      &trans      &task_manager    &kp GRAVE        &kp MINUS   &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
+                                                        &kp LCTRL   &kp LEFT_ALT     &kp SPACE        &kp RET     &trans      &kp RALT
+            >;
+        };
+
+        Config_rgb_bt {
+            //   .------------------------------------------------.                         .-------------------------------------------------.
+            //   |        |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |RGBBRI-|RGBBRI+|WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
+            //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+            //   |        |CLICK_1|CLICK_2|BT_CLR |BT_PRV | BT_NXT|                         |RGBSAT-|RGBSAT+|       |CLICK_1| UP    |CLICK_2  |
+            //   |--------+-------+-------+-------+-------+-------|                         |-------+-------+-------+-------+-------+---------|
+            //   |BT_CLR  |BT_0   |BT_1   |BT_2   |BT_3   |BT_4   |                         |RGBHUE-|RGBHUE+| RESET | LEFT  | DOWN  | RIGHT   |
+            //   '---------------------------------------------------------|       |----------------------------------------------------------'
+            //                            |EP_ON  | EP_OFF|         EP_TOG |       |RGBANI- |RGBANI+|   RGBTOG      |
+
+            label = "Config_rgb_bt";
+            bindings = <
+            &none       &none         &none         &out OUT_USB        &out OUT_BLE    &out OUT_TOG               &rgb_ug RGB_BRD    &rgb_ug RGB_BRI   &none      &none     &none     &none
+            &none       &none         &none         &bt BT_CLR          &bt BT_PRV      &bt BT_NXT                 &rgb_ug RGB_SAD   &rgb_ug RGB_SAI    &none      &none     &none     &none
+            &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2        &bt BT_SEL 3    &bt BT_SEL 4               &rgb_ug RGB_HUD   &rgb_ug RGB_HUI    &reset     &none     &none     &none
+                                      &ext_power EP_ON    &ext_power EP_OFF        &ext_power EP_TOG               &rgb_ug RGB_EFR   &rgb_ug RGB_EFF    &rgb_ug RGB_TOG
             >;
         };
     };
