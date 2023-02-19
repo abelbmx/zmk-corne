@@ -20,7 +20,6 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/led/led.h>
 
-#include <../boards/shields/corne/boards/nice_nano.overlay>
 
 &led_strip { chain-length = <27>; };
 
