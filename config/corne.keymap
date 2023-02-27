@@ -67,6 +67,27 @@
                 ;
         };
 
+        pregunta: pregunta {
+            label = "Pregunta";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_NUMBER_1 &kp KP_NUMBER_6 &kp KP_NUMBER_8>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        exclamacion: exclamacion {
+            label = "Exclamacion";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_NUMBER_1 &kp KP_NUMBER_7 &kp KP_NUMBER_>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
         screen_cap: screen_cap {
             label = "Screen_Cap";
             compatible = "zmk,behavior-macro";
@@ -155,7 +176,7 @@
             &kp F1                    &kp F2                &kp F3             &kp F4             &kp F5              &kp F6          &kp F7              &kp F8             &kp F9                 &kp F10              &kp F11           &kp F12
             &out OUT_USB        &out OUT_BLE          &out OUT_TOG         &bt BT_CLR         &bt BT_PRV          &bt BT_NXT          &rgb_ug RGB_SAD     &rgb_ug RGB_SAI    &rgb_ug RGB_EFF        &rgb_ug RGB_TOG       &none             &none
             &bt BT_CLR          &bt BT_SEL 0          &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3        &bt BT_SEL 4          &rgb_ug RGB_BRD     &rgb_ug RGB_BRI    &rgb_ug RGB_EFR        &rgb_ug RGB_HUD      &rgb_ug RGB_HUI   &reset
-                                                                                &none              &none               &none          &none               &none              &none
+                                                                                &LCTRL              &none               &LEFT_ALT          &none               &none              &none
             >;
         };
     };
