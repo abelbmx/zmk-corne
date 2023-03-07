@@ -7,7 +7,7 @@
  * 
  */
 
-#include <behaviors.dtsi>
+#include <zephyr.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -46,6 +46,9 @@
 		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
 	};
 };
+
+
+
 
 &pro_micro_i2c {
 	status = "okay";
