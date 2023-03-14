@@ -70,6 +70,11 @@
   };
 };
 
+ext-power { compatible = "zmk,ext-power-generic"; label = "EXT_POWER"; control-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>; init-delay-ms = <250>; };
+
+&lt { quick_tap_ms = <200>; }
+
+
 / {
 	chosen {
 		zmk,underglow = &led_strip;
