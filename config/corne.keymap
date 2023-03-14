@@ -69,20 +69,14 @@
     prechargep = <0x22>;
   };
 };
-
-ext-power { compatible = "zmk,ext-power-generic"; label = "EXT_POWER"; control-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>; init-delay-ms = <250>; };
-
-&lt { quick_tap_ms = <200>; }
-
-
+ 
 / {
 	chosen {
 		zmk,underglow = &led_strip;
         zephyr,display = &oled;
 	};
 };
-
-
+ 
 / {
     macros {
         zed_em_kay: zed_em_kay {
@@ -168,7 +162,7 @@ ext-power { compatible = "zmk,ext-power-generic"; label = "EXT_POWER"; control-g
             bindings = <
             &kp TAB  &kp K_PP    &kp UP     &kp F2     &kp F4     &kp F5           &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
         &kp LSHFT    &kp LEFT  &kp DOWN  &kp RIGHT     &kp F6     &kp F8           &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &kp F10
-           &kp LALT    &trans    &trans     &trans     &kp F9   &kp PLUS           &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
+           &kp LALT    &bt BT_CLR      &trans     &trans     &kp F9   &kp PLUS           &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
                                           &kp LGUI     &trans  &kp SPACE           &kp RET  &mo 3    &kp RALT
             >;
         };
@@ -185,7 +179,7 @@ ext-power { compatible = "zmk,ext-power-generic"; label = "EXT_POWER"; control-g
             &bt BT_SEL 0      &kp EXCL      &kp AT     &kp HASH      &kp DLLR         &kp PRCNT        &kp CARET   &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
             &bt BT_SEL 1    &kp PG_UP   &bt BT_PRV   &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER   &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
             &bt BT_SEL 2    &kp PG_DN       &trans       &trans      &task_manager    &kp GRAVE        &kp MINUS   &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
-                                                      &kp LCTRL      &kp LEFT_ALT     &kp SPACE        &kp RET     &trans      &kp RALT
+                                                      &kp LCTRL      &kp LEFT_ALT     &kp SPACE        &kp RET     &trans      &kp bt BT_CLR  
             >;
         };
         
