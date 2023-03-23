@@ -51,7 +51,6 @@
 / {
 	chosen {
 		zmk,underglow = &led_strip;
-
 	};
 };
 
@@ -162,7 +161,7 @@
             >;
         };
         
-        Config_rgb_bt {
+        Config {
             // -----------------------------------------------------------------------------------------
             //   .------------------------------------------------.                         .-------------------------------------------------.
             //   |        |       |       |OUT_USB|OUT_BLE|OUT_TOG|                         |RGBBRI-|RGBBRI+|WH_LEFT|WH_RIGH|WH_DOWN| WH_UP   |
@@ -173,7 +172,7 @@
             //   '---------------------------------------------------------|       |----------------------------------------------------------'
             //                            |EP_ON  | EP_OFF|         EP_TOG |       |RGBANI- |RGBANI+|   RGBTOG      |
 
-            label = "Config_rgb_bt";
+            label = "Config";
             bindings = <
             &kp F1                    &kp F2                &kp F3             &kp F4             &kp F5              &kp F6          &kp F7              &kp F8             &kp F9                 &kp F10              &kp F11           &kp F12
             &out OUT_USB        &out OUT_BLE          &out OUT_TOG         &bt BT_CLR         &bt BT_PRV          &bt BT_NXT          &rgb_ug RGB_SAD     &rgb_ug RGB_SAI    &rgb_ug RGB_EFF        &rgb_ug RGB_TOG       &none             &none
