@@ -49,7 +49,7 @@
 
 
 
-/*
+
 &pro_micro_i2c {
   status = "okay";
 
@@ -68,12 +68,12 @@
     com-sequential;
     prechargep = <0x22>;
   };
-};*/
+};
 
 / {
 	chosen {
 		zmk,underglow = &led_strip;
-        //zephyr,display = &oled;
+        zephyr,display = &oled;
 	};
 };
 
