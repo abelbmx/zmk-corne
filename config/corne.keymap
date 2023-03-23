@@ -50,30 +50,10 @@
 
 
 
-&pro_micro_i2c {
-  status = "okay";
-
-  oled: ssd1306@3c {
-    compatible = "solomon,ssd1306fb";
-    reg = <0x3c>;
-    label = "SSD1306";
-    width = <128>;
-    height = <32>;
-    segment-offset = <0>;
-    page-offset = <0>;
-    display-offset = <0>;
-    multiplex-ratio = <31>;
-    com-invdir;
-    segment-remap;
-    com-sequential;
-    prechargep = <0x22>;
-  };
-};
-
 / {
 	chosen {
 		zmk,underglow = &led_strip;
-        zephyr,display = &oled;
+
 	};
 };
 
@@ -205,9 +185,3 @@
         };
     };
 };
-
-
-&nice_view_spi {
-    cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
-};
- 
