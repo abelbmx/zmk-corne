@@ -134,17 +134,17 @@
 
         Lower {
             // -----------------------------------------------------------------------------------------
-            // |  TAB  |  PP  |  up  |   F2  |  F4  |  F5  |   |  7  |  8  |  9  |  0  | HOME | SCP |
-            // | LSHFT | left | down | right |  F6  | F8   |   |  4  |  5  |  6  | END |   ñ  | F10 |
-            // | LALT  |      |      |       |  F9  |  +   |   |  1  |  2  |  3  |  .  |  NL  | RSH |
+            // |  ESC  |  1   |  2   |   3   |   4  |   5  |   |  7  |  8  |  9  |  0  | HOME | SCP |
+            // | LSHFT | F2   |  up  |  F4   |  F5  |  6   |   |  4  |  5  |  6  | END |   ñ  | F10 |
+            // | LALT  | left | down | right |  -   |  +   |   |  1  |  2  |  3  |  .  |  NL  | RSH |
             //                       | GUI   |      | SPC  |   | ENT |     | ALT |
 
             label = "Lower";
             bindings = <
-            &kp TAB  &kp K_PP    &kp UP     &kp F2     &kp F4     &kp F5           &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
-        &kp LSHFT    &kp LEFT  &kp DOWN  &kp RIGHT     &kp F6     &kp F8           &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &kp F10
-           &kp LALT    &bt BT_CLR       &bt BT_SEL 0      &trans     &kp F9   &kp PLUS           &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
-                                          &kp LGUI     &trans  &kp SPACE           &kp RET  &mo 3    &kp RALT
+            &kp ESC     &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4    &kp NUMBER_5        &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
+            &kp LSHFT   &kp F2         &kp UP          &kp F4          &kp F5          &kp NUMBER_6        &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &kp F10
+            &kp LALT    &kp LEFT       &kp DOWN        &kp RIGHT       &kp MINUS       &kp PLUS            &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
+                                       &kp LGUI        &trans          &kp CTRL                            &kp RET  &mo 3    &kp RALT
             >;
         };
 
@@ -178,7 +178,7 @@
             label = "Config";
             bindings = <
             &kp F1                    &kp F2                &kp F3             &kp F4             &kp F5              &kp F6          &kp F7              &kp F8             &kp F9                 &kp F10              &kp F11           &kp F12
-            &out OUT_USB        &out OUT_BLE          &out OUT_TOG         &bt BT_CLR         &bt BT_PRV          &bt BT_NXT          &rgb_ug RGB_SAD     &rgb_ug RGB_SAI    &rgb_ug RGB_EFF        &rgb_ug RGB_TOG       &none             &none
+            &out OUT_USB        &out OUT_BLE          &out OUT_TOG         &bt BT_CLR         &bt BT_PRV          &bt BT_NXT          &rgb_ug RGB_SAD     &rgb_ug RGB_SAI    &rgb_ug RGB_EFF        &rgb_ug RGB_TOG      &kp K_PP          &none
             &bt BT_CLR          &bt BT_SEL 0          &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3        &bt BT_SEL 4          &rgb_ug RGB_BRD     &rgb_ug RGB_BRI    &rgb_ug RGB_EFR        &rgb_ug RGB_HUD      &rgb_ug RGB_HUI   &reset
                                                                         &kp LCTRL                 &none        &kp LEFT_ALT            &none               &none              &none
             >;
