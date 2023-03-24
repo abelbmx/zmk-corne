@@ -140,7 +140,7 @@
             &kp ESC     &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4    &kp NUMBER_5        &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
             &kp LSHFT   &kp F2         &kp UP          &kp F4          &kp F5          &kp NUMBER_6        &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &kp F10
             &kp LALT    &kp LEFT       &kp DOWN        &kp RIGHT       &kp MINUS       &kp PLUS            &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
-                                       &kp LGUI        &trans          &kp CTRL                            &kp RET  &mo 3    &kp RALT
+                                       &kp LGUI        &trans          &kp LCTRL                           &kp RET  &mo 3    &kp RALT
             >;
         };
 
