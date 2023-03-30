@@ -426,7 +426,23 @@
             &kp F1                &kp F2                &kp F3           &kp F4             &kp F5           &kp F6          &kp F7              &kp F8             &kp F9                 &kp F10              &kp F11           &kp F12
             &out OUT_USB    &out OUT_BLE          &out OUT_TOG            &to 3         &bt BT_PRV           &bt BT_NXT      &rgb_ug RGB_SAD     &rgb_ug RGB_SAI    &rgb_ug RGB_EFF        &rgb_ug RGB_TOG      &kp K_PP          &none
             &bt BT_CLR      &bt BT_SEL 0          &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3           &bt BT_SEL 4    &rgb_ug RGB_BRD     &rgb_ug RGB_BRI    &rgb_ug RGB_EFR        &rgb_ug RGB_HUD      &rgb_ug RGB_HUI   &reset
-                                                                      &kp LCTRL              &none           &kp LEFT_ALT    &none               &none              &none
+                                                                      &kp LCTRL              &to 4           &kp LEFT_ALT    &none               &none              &none
+            >;
+        };
+
+        Dvorak {
+            // ------------------------------------------------------------------------------------------------------------
+            // |  F1  |   F2   |   F3  |  F4   |  F5   |   F6  |       |   F7   |  F8   |   F9  |  F10  |   F11 |   F12   |
+            // |OUT_USB|OUT_BLE|OUT_TOG|BT_CLR |BT_PRV | BT_NXT|       |RGBSAT- |RGBSAT+|       |CLICK_1| UP    |CLICK_2  |
+            // |BT_CLR |BT_0   |BT_1   |BT_2   |BT_3   |BT_4   |       |RGBHUE- |RGBHUE+| RESET | LEFT  | DOWN  | RIGHT   |
+            //                         |EP_ON  | EP_OFF|EP_TOG |       |RGBANI- |RGBANI+|   RGBTOG      |
+
+            label = "Dvorak";
+            bindings = <
+            &kp F1                &kp F2                &kp F3           &kp F4             &kp F5           &kp F6          &kp F7              &kp F8             &kp F9                 &kp F10              &kp F11           &kp F12
+            &out OUT_USB    &out OUT_BLE          &out OUT_TOG            &to 3         &bt BT_PRV           &bt BT_NXT      &rgb_ug RGB_SAD     &rgb_ug RGB_SAI    &rgb_ug RGB_EFF        &rgb_ug RGB_TOG      &kp K_PP          &none
+            &bt BT_CLR      &bt BT_SEL 0          &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3           &bt BT_SEL 4    &rgb_ug RGB_BRD     &rgb_ug RGB_BRI    &rgb_ug RGB_EFR        &rgb_ug RGB_HUD      &rgb_ug RGB_HUI   &reset
+                                                                      &kp LCTRL              &to 4           &kp LEFT_ALT    &none               &none              &none
             >;
         };
     };
