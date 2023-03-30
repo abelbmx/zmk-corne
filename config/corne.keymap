@@ -431,19 +431,17 @@
         };
 
         Dvorak {
-            // ------------------------------------------------------------------------------------------------------------
-            // |  F1  |   F2   |   F3  |  F4   |  F5   |   F6  |       |   F7   |  F8   |   F9  |  F10  |   F11 |   F12   |
-            // |OUT_USB|OUT_BLE|OUT_TOG|BT_CLR |BT_PRV | BT_NXT|       |RGBSAT- |RGBSAT+|       |CLICK_1| UP    |CLICK_2  |
-            // |BT_CLR |BT_0   |BT_1   |BT_2   |BT_3   |BT_4   |       |RGBHUE- |RGBHUE+| RESET | LEFT  | DOWN  | RIGHT   |
-            //                         |EP_ON  | EP_OFF|EP_TOG |       |RGBANI- |RGBANI+|   RGBTOG      |
-
-            label = "Dvorak";
-            bindings = <
-            &kp F1                &kp F2                &kp F3           &kp F4             &kp F5           &kp F6          &kp F7              &kp F8             &kp F9                 &kp F10              &kp F11           &kp F12
-            &out OUT_USB    &out OUT_BLE          &out OUT_TOG            &to 3         &bt BT_PRV           &bt BT_NXT      &rgb_ug RGB_SAD     &rgb_ug RGB_SAI    &rgb_ug RGB_EFF        &rgb_ug RGB_TOG      &kp K_PP          &none
-            &bt BT_CLR      &bt BT_SEL 0          &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3           &bt BT_SEL 4    &rgb_ug RGB_BRD     &rgb_ug RGB_BRI    &rgb_ug RGB_EFR        &rgb_ug RGB_HUD      &rgb_ug RGB_HUI   &reset
-                                                                      &kp LCTRL              &to 4           &kp LEFT_ALT    &none               &none              &none
-            >;
+            // -----------------------------------------------------------------------------------------
+            // |TAB:ESC   | ; : | , < | . > |  P  |  Y  |         | F   |  G   |  C  |  R  |  L  | BKSP |
+            // | CTRL     |  A  |  O  |  E  |  U  |  I  |         |  D  |  H   |  T  |  N  |  S  |  DEL |
+            // | LSFT:CAP |' "  | q @ | J   | K   |  X  |         |  B  |  M   |  W  |  V  |  Z  | TAB  |
+            //                        | GUI | LWR | SPC |         | ENT | RSE  | ALT |
+                                    bindings = <
+            TD_TAB     TD_SCLN  TD_COMM TD_DOT &kp P &kp Y                   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
+            &kp LCTRL  &kp A    &kp O   &kp E  &kp U &kp I                   &kp D &kp H  &kp T     &kp N   &kp S    &kp DEL
+            TD_SCLOCK TD_QUOTE TD_ARR  &kp J  &kp K &kp X                   &kp B &kp M  &kp W     &kp V   &kp Z    TD_TAW
+                                        TD_ALT  &to 4 TD_SPC                   TD_SPC &mo 2 &kp RALT
+                                    >;
         };
     };
 };
