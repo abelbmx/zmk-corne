@@ -436,11 +436,12 @@
             // | CTRL     |  A  |  O  |  E  |  U  |  I  |         |  D  |  H   |  T  |  N  |  S  |  DEL |
             // | LSFT:CAP |' "  | q @ | J   | K   |  X  |         |  B  |  M   |  W  |  V  |  Z  | TAB  |
             //                        | GUI | LWR | SPC |         | ENT | RSE  | ALT |
+            label = "Dvorak";
                                     bindings = <
             TD_TAB     TD_SCLN  TD_COMM TD_DOT &kp P &kp Y                   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
             &kp LCTRL  &kp A    &kp O   &kp E  &kp U &kp I                   &kp D &kp H  &kp T     &kp N   &kp S    &kp DEL
-            TD_SCLOCK TD_QUOTE TD_ARR  &kp J  &kp K &kp X                   &kp B &kp M  &kp W     &kp V   &kp Z    TD_TAW
-                                        TD_ALT  &to 4 TD_SPC                   TD_SPC &mo 2 &kp RALT
+            TD_SCLOCK TD_QUOTE TD_ARR   &kp J  &kp K &kp X                   &kp B &kp M  &kp W     &kp V   &kp Z    TD_TAW
+                                      TD_ALT  &to 0 TD_SPC                   TD_SPC &mo 1 &kp RALT
                                     >;
         };
     };
