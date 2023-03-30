@@ -102,16 +102,10 @@
 	};
 };
 
-/*
-// Sticky key config if desired
-&sk {
-    //release-after-ms = <2000>;
-    quick-release;
-};
 
-*/
+/ {
 
-behaviors{  
+    behaviors{  
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0"; 
@@ -314,7 +308,6 @@ behaviors{
         };
     };
 
-/ {
     macros {
         zed_em_kay: zed_em_kay {
             label = "ZM_zed_em_kay";
