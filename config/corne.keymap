@@ -63,12 +63,14 @@
 // nine_equal  9 --> =  | N9 --> EQUAL
 // zero_s      0 --> *  | N0 --> STAR
 
+
 /*
 // Sticky key config if desired
 &sk {
     //release-after-ms = <2000>;
     quick-release;
-};
+}
+*/
 
 &spi1 {
 	compatible = "nordic,nrf-spim";
