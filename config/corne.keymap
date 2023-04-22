@@ -407,9 +407,9 @@
 
             label = "Raise";
             bindings = <
-            &bt BT_SEL 0      &kp EXCL      &kp AT       &kp HASH        &kp DLLR         &kp PRCNT        &kp CARET      &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
-            &bt BT_SEL 1      &kp PG_UP     &bt BT_PRV   &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER      &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
-            &bt BT_SEL 2      &kp PG_DN     &pregunta    &exclamacion    &task_manager    &kp PIPE         &kp MINUS      &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
+            &td1    &kp EXCL      &kp AT       &kp HASH        &kp DLLR         &kp PRCNT        &kp CARET      &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
+            &td2    &kp PG_UP     &bt BT_PRV   &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER      &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
+            &td3    &kp PG_DN     &pregunta    &exclamacion    &task_manager    &kp PIPE         &kp MINUS      &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
                                                          &kp LCTRL       &kp LEFT_ALT     &kp SPACE        &bt BT_SEL 0   &trans      &bt BT_CLR   
             >;
         };
@@ -446,6 +446,8 @@
         };
     };
 };
+
+
 
 
 &nice_view_spi {
