@@ -218,13 +218,6 @@
             tapping-term-ms = <TAP_SPEED>; 
             bindings = <&kp MINUS>, <&kp UNDERSCORE>;
             }; 
-        td7: tap_dance_7 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_7"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <TAP_SPEED>; 
-            bindings = <&kp MINUS>, <&kp UNDERSCORE>;
-            }; 
         td8: tap_dance_8 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_8"; 
@@ -407,9 +400,9 @@
 
             label = "Raise";
             bindings = <
-            &tap_dance_1    &kp EXCL      &kp AT       &kp HASH        &kp DLLR         &kp PRCNT        &kp CARET      &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
-            &tap_dance_2    &kp PG_UP     &bt BT_PRV   &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER      &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
-            &tap_dance_3    &kp PG_DN     &pregunta    &exclamacion    &task_manager    &kp PIPE         &kp MINUS      &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
+            &td1     &kp EXCL      &kp AT       &kp HASH        &kp DLLR         &kp PRCNT        &kp CARET      &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
+            &td2     &kp PG_UP     &bt BT_PRV   &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER      &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
+            &td3      &kp PG_DN     &pregunta    &exclamacion    &task_manager    &kp PIPE         &kp MINUS      &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
                                                          &kp LCTRL       &kp LEFT_ALT     &kp SPACE        &bt BT_SEL 0   &trans      &bt BT_CLR   
             >;
         };
