@@ -63,7 +63,6 @@
 // nine_equal  9 --> =  | N9 --> EQUAL
 // zero_s      0 --> *  | N0 --> STAR
 
-
 /*
 // Sticky key config if desired
 &sk {
@@ -80,7 +79,6 @@
 	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
 	sck-pin = <5>;
 	miso-pin = <7>;
-
 	led_strip: ws2812@0 {
 		compatible = "worldsemi,ws2812-spi";
 		label = "WS2812";
@@ -96,11 +94,9 @@
 		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
 	};
 };
-
 / {
 	chosen {
 		zmk,underglow = &led_strip;
-
 	};
 };
 
@@ -116,7 +112,6 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-
         pregunta: pregunta {
             label = "Pregunta";
             compatible = "zmk,behavior-macro";
@@ -137,7 +132,6 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-
         screen_cap: screen_cap {
             label = "Screen_Cap";
             compatible = "zmk,behavior-macro";
@@ -147,7 +141,6 @@
                 , <&macro_release &kp LGUI &kp LSHFT &kp S>
                 ;
         };
-
         task_manager: task_manager {
             label = "Task_Manager";
             compatible = "zmk,behavior-macro";
@@ -158,8 +151,6 @@
                 ;
         };
     };
-
-
     behaviors{  
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
@@ -167,7 +158,6 @@
             #binding-cells = <0>; 
             tapping-term-ms = <TAP_SPEED>; 
             bindings = <&kp TAB>, <&kp ESC>;
-
             }; 
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
@@ -282,7 +272,6 @@
             tapping-term-ms = <TAP_SPEED>; 
             bindings = <&sk LSHIFT>, <&kp CAPSLOCK>;
             }; 
-
         // create the shifts of dvorak 
         seven_lbkt: seven_lbkt{ 
                 compatible = "zmk,behavior-mod-morph";
@@ -355,7 +344,6 @@
                 mods=<(MOD_LSFT|MOD_RSFT)>;
         };
     };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -439,7 +427,6 @@
         };
     };
 };
-
 
 &nice_view_spi {
     cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
