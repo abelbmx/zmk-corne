@@ -87,30 +87,29 @@
     };
 };
 
-&spi3 {
-  compatible = "nordic,nrf-spim";
-  status = "okay";
+&spi1 {
+	compatible = "nordic,nrf-spim";
+	/* Cannot be used together with i2c0. */
+	status = "okay";
+	mosi-pin = <6>;
+	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+	sck-pin = <5>;
+	miso-pin = <7>;
 
-  pinctrl-0 = <&spi3_default>;
-  pinctrl-1 = <&spi3_sleep>;
-  pinctrl-names = "default", "sleep";
+	led_strip: ws2812@0 {
+		compatible = "worldsemi,ws2812-spi";
+		label = "WS2812";
 
-  led_strip: ws2812@0 {
-    compatible = "worldsemi,ws2812-spi";
-    label = "WS2812";
+		/* SPI */
+		reg = <0>; /* ignored, but necessary for SPI bindings */
+		spi-max-frequency = <4000000>;
 
-    /* SPI */
-    reg = <0>; /* ignored, but necessary for SPI bindings */
-    spi-max-frequency = <4000000>;
-
-    /* WS2812 */
-    chain-length = <27>; /* number of LEDs */
-    spi-one-frame = <0x70>;
-    spi-zero-frame = <0x40>;
-    color-mapping = <LED_COLOR_ID_GREEN
-                          LED_COLOR_ID_RED
-                          LED_COLOR_ID_BLUE>;
-  };
+		/* WS2812 */
+		chain-length = <27>; /* There are per-key RGB, but the first 6 are underglow */
+		spi-one-frame = <0x70>;
+		spi-zero-frame = <0x40>;
+		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+	};
 };
 
 / {
@@ -450,7 +449,7 @@
             TD_TAB     TD_SCLN  TD_COMM  TD_DOT &kp P &kp Y                   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
             &kp LCTRL  &kp A    &kp O    &kp E  &kp U &kp I                   &kp D &kp H  &kp T     &kp N   &kp S    &kp DEL
             TD_SCLOCK  TD_QUOTE TD_ARR   &kp J  &kp K &kp X                   &kp B &kp M  &kp W     &kp V   &kp Z    TD_TAW
-                                      TD_ALT  &to 0 TD_SPC                   TD_SPC &mo 1 &kp RALT
+                                      TD_ALT    &to 0 TD_SPC                  TD_SPC &mo 1 &kp RALT
                                     >;
         };
     };
