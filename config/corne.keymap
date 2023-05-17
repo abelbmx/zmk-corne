@@ -71,7 +71,7 @@
     quick-release;
 }
 */
-&spi0 {
+&spi1 {
 	compatible = "nordic,nrf-spi";
 	status = "okay";
 	pinctrl-0 = <&spi0_default>;
@@ -420,10 +420,10 @@
 
             label = "Raise";
             bindings = <
-            &td1     &kp EXCL      &kp AT       &kp HASH        &kp DLLR         &kp PRCNT        &kp CARET      &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
-            &td6     &kp PG_UP     &bt BT_PRV   &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER      &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
-            &bt BT_SEL 0      &kp PG_DN     &pregunta    &exclamacion    &task_manager    &kp PIPE         &kp MINUS      &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
-                                                         &kp LCTRL       &kp LEFT_ALT     &kp SPACE        &bt BT_SEL 0   &trans      &bt BT_CLR   
+            &td1                &kp EXCL      &kp AT       &kp HASH        &kp DLLR         &kp PRCNT        &kp CARET      &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
+            &td6                &kp PG_UP     &bt BT_PRV   &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER      &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
+            &bt BT_SEL 0        &kp PG_DN     &pregunta    &exclamacion    &task_manager    &kp PIPE         &kp MINUS      &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
+                                                            &kp LCTRL       &kp LEFT_ALT     &kp SPACE        &bt BT_SEL 0   &trans      &bt BT_CLR   
             >;
         };
         
