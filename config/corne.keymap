@@ -392,10 +392,10 @@
 
             label = "Lower";
             bindings = <
-            &bt BT_CLR       &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4    &kp NUMBER_5        &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
-            &kp LSHFT   &kp F2         &kp UP          &kp F4          &kp F5          &kp NUMBER_6             &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &kp F10
-            &kp LALT    &kp LEFT       &kp DOWN        &kp RIGHT       &kp MINUS       &bt BT_NXT                 &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
-                                       &kp LGUI        &trans          &kp LCTRL                                &kp RET  &mo 3    &kp RALT
+            &kp TAB     &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4    &kp NUMBER_5        &kp KP_NUMBER_7   &kp KP_NUMBER_8    &kp KP_NUMBER_9    &kp NUMBER_0  &kp HOME        &kp BSPC
+            &kp LSHFT   &kp F2         &kp UP          &kp F4          &kp F5          &kp F8              &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6    &kp END       &zed_em_kay     &td16
+            &kp LALT    &kp LEFT       &kp DOWN        &kp RIGHT       &kp MINUS       &bt BT_NXT          &kp KP_NUMBER_1   &kp KP_NUMBER_2    &kp KP_NUMBER_3    &kp DOT       &kp KP_NUMLOCK  &screen_cap
+                                       &kp LGUI        &trans          &kp LCTRL                           &kp RET           &mo 3              &kp RALT
             >;
         };
 
@@ -411,7 +411,7 @@
             &td1                &kp EXCL      &kp AT       &kp HASH        &kp DLLR         &kp PRCNT        &kp CARET      &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp DEL
             &td6                &kp PG_UP     &bt BT_PRV   &bt BT_NXT      &kp LGUI         &to 3            &kp UNDER      &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH   &kp F11
             &bt BT_SEL 0        &kp PG_DN     &pregunta    &exclamacion    &task_manager    &kp PIPE         &kp MINUS      &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE   &kp TILDE
-                                                            &kp LCTRL       &kp LEFT_ALT     &kp SPACE        &bt BT_NXT   &trans      &bt BT_CLR   
+                                                            &kp LCTRL      &kp LEFT_ALT     &kp SPACE        &kp RET        &trans      &kp RALT 
             >;
         };
         
