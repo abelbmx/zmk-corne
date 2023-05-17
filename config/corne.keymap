@@ -84,10 +84,10 @@
 
 		/* SPI */
 		reg = <0>; /* ignored, but necessary for SPI bindings */
-		spi-max-frequency = <SPI_FREQ>;
+		spi-max-frequency = <4000000>;
 
 		/* WS2812 */
-		chain-length = <8>; /* arbitrary; change at will */
+		chain-length = <27>; /* arbitrary; change at will */
 		color-mapping = <LED_COLOR_ID_GREEN
 				 LED_COLOR_ID_RED
 				 LED_COLOR_ID_BLUE>;
